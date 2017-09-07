@@ -1,2 +1,0 @@
-# rmdyh.github.io
-blog
