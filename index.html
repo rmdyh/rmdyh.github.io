@@ -9,6 +9,8 @@
     <meta name="apple-mobile-app-status-bar-style" content="black">
 
 	<meta name="description" content="这是一个由rmdyh设计和维护的用于记录学习轨迹而开设的博客。Welcome!This is a blog designed by rmdyh.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<link rel="shortcut icon"  type="image/x-icon" href="favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -17,58 +19,55 @@
 <body>
 	<header class="head">
 		<div id="title"><h1>Rmdyh's Home</h1></div>
-		<img src="images/navico.png">
+		<img id="navimg" src="images/navico.png">
 	</header>
-	<div id="thepage">
-		<img class="page-bg" src="images/bg.png">
-
-		<div id="content-list">
+	<img class="page-bg" src="images/bg.png">
+	<div id="content-list">
+	    <div class="wrapper">
 			<div id="left-con">
-				<div id="left-top">
-					<div id="title-list-article">文章列表</div>
+				<div class="title-block" id="left-top">
+					<div class="title-article"><h2>文章列表</h2></div>
 				</div>
-				<div id="left-below">
-					<div id="div-list-article">
-						<ul id="list-article">
+				<div class="content-block" id="left-below">
+				<div class="below-wraper">
+					<div class="list-list">
+						<ul class="list-title">
 							<li>第一篇文章</li>
 							<li>第二篇文章</li>
-							<li>很多篇的文章</li>
+							<li>很多篇的并且名字很长的涉及到文章</li>
 						</ul>
 					</div>
-					<div id="div-button-up-list">
-						<img src="images/up.png" id="button-up-list">
-					</div>
-					<div id="div-button-down-list">
-						<img src="images/down.png" id="button-down-list">
-					</div>
+					<div class="funcbt up-button" id="div-button-up-list"><img src="images/up.png" id="button-up-list"></div>
+					<div class="funcbt down-button" id="div-button-down-list"><img src="images/down.png" id="button-down-list"></div>
+				</div>
 				</div>
 			</div>
 			<div id="right-con">
-				<div id="right-top">
-					<div id="div-list-sort">
-						<ul id="list-sort">
+				<div class="content-block" id="right-top">
+				<div class="below-wraper" id="right-wraper">
+					<div class="list-list" id="right-list">
+						<ul class="list-title">
 							<li>2017-09</li>
 							<li>2017-10</li>
 						</ul>
 					</div>
-					<div id="div-button-up-sort">
+					<div class="funcbt up-button" id="div-button-up-sort">
 						<img src="images/up.png" id="button-up-sort">
 					</div>
-					<div id="div-button-down-sort">
+					<div class="funcbt down-button" id="div-button-down-sort">
 						<img src="images/down.png" id="button-down-sort">
 					</div>
 				</div>
-				<div id="right-below">
-					<div id="title-list-sort">时间分类</div>
+				</div>
+				<div class="title-block" id="right-below">
+					<div class="title-article"><h2>时间分类</h2></div>
 				</div>
 			</div>
 		</div>
-
-		<div id="content-article">
-			
-		</div>
-
 	</div>
+
+	<div id="content-article"></div>
+
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
