@@ -10,11 +10,11 @@
 	src: url('../fonts/Blackie.ttf'); /* IE9+ */
 }
 
-/*隐藏list*/
+/*隐藏list
 #content-list{
 	position: absolute;
 	visibility: hidden;
-}
+}*/
 /*隐藏article*/
 #content-article{
 	position: absolute;
@@ -25,6 +25,7 @@
     margin:0;
     padding:0;
     list-style-type:none;
+    cursor: default;
 }
 
 body{
@@ -34,7 +35,8 @@ body{
 }
 
 li{
-	margin: 12px 0;
+	margin: 2px 0;
+	padding: 6px 0;
 }
 
 .head{
@@ -62,11 +64,11 @@ li{
 	position: absolute;
 	right: 15px;
 	z-index: 2;
-    -webkit-transition:all 1s ease;
-    -moz-transition:all 1s ease;
-    -o-transition:all 1s ease;
-    -ms-transition:all 1s ease;    
-    transition:all 1s ease;
+    -webkit-transition:all 0.2s ease;
+    -moz-transition:all 0.2s ease;
+    -o-transition:all 0.2s ease;
+    -ms-transition:all 0.2s ease;    
+    transition:all 0.2s ease;
 }
 #navimg:hover{
     -webkit-transform:rotate(180deg);
@@ -87,6 +89,16 @@ li{
 	font-family: "zhfont";
 }
 
+#content-list li{
+    -webkit-transition: background 0.3s linear;
+    -moz-transition: background 0.3s linear;
+    -o-transition: background 0.3s linear;
+    -ms-transition: background 0.3s linear;   
+    transition: background 0.3s linear;
+}
+#content-list li:hover{
+	background: rgba(250,250,250,0.4);
+}
 .wrapper{
 	position: relative;
 	top: 3%;
@@ -154,10 +166,21 @@ li{
 	font-size: 24px;
 	margin: 7% 60px 0 10%;
 	overflow: hidden;
+	position: relative;
+}
+.list-title{
+	position: absolute;
+	width: 100%;
+    -webkit-transition: top 0.3s;
+    -moz-transition: top 0.3s;
+    -o-transition: top 0.3s;
+    -ms-transition: top 0.3s;   
+    transition: top 0.3s;
+    top: 0;
 }
 #right-list{
 	margin-top: 15%;
-	margin-left: 0;
+	margin-left: 20px;
 	text-align: center;
 }
 
@@ -166,6 +189,18 @@ li{
 	height: 50%;
 	position: absolute;
 	right: 10px;
+}
+.funcbt img{
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    -o-transition: background 0.3s;
+    -ms-transition: background 0.3s;   
+    transition: background 0.3s;
+	border-radius: 20px;
+	visibility: hidden;
+}
+.funcbt img:hover{
+	background: rgba(243,247,250,0.5);
 }
 .up-button{
 	top: 0%;
@@ -203,6 +238,17 @@ li{
 	font-size: 20px;
 	margin: 4% 60px 0 4%;
 	overflow: hidden;
+	position: relative;
+}
+#text-content{
+	position: absolute;
+	width: 100%;
+    -webkit-transition: top 0.3s;
+    -moz-transition: top 0.3s;
+    -o-transition: top 0.3s;
+    -ms-transition: top 0.3s;   
+    transition: top 0.3s;
+    top: 0;
 }
 
 .wrapper-bar{
@@ -226,10 +272,6 @@ li{
 	font-size: 24px;
 }
 
-.tool-bar li{
-	padding: 0 24px;
-}
-
 .bar1{
 	height: 70px;
 }
@@ -238,18 +280,25 @@ li{
 	padding-left: 10px;
 }
 
-.bar2 ul{
-	text-align: right;
-	margin: 16px 0;
-}
-.bar2 li{
-	display: inline-block;
-	border-bottom: 2px solid #a3a3a3;
-}
-
-.bar3{
+.bar3,.bar2{
 	text-align: center;
+	padding: 10px 0;
+}
+.bar3 li,.bar2 li{
+    -webkit-transition: background 0.3s linear;
+    -moz-transition: background 0.3s linear;
+    -o-transition: background 0.3s linear;
+    -ms-transition: background 0.3s linear;   
+    transition: background 0.3s linear;
+}
+.bar3 h3{
 	padding-top: 10px;
+}
+.forabsoulute{
+	position: relative;
+}
+#qqlink:hover,#emaillink:hover,.bar2 li:hover{
+	background: rgba(250,250,250,1);
 }
 
 .bar4{

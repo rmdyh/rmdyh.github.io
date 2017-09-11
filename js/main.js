@@ -6,20 +6,35 @@
 	listChange();
 	var navwrap = document.getElementsByClassName("wrapper-bar");
 	navwrap[0].style.top = "-434px";
+
+	var h1 = document.getElementById("article-list").offsetHeight;
+	var h2 = document.getElementById("left-list").offsetHeight;
+	if(h1 > h2)
+		document.getElementById("button-down-list").style.visibility = "visible";
+	h1 = document.getElementById("date-list").offsetHeight;
+	h2 = document.getElementById("right-list").offsetHeight;
+	if(h1 > h2)
+		document.getElementById("button-down-sort").style.visibility = "visible";
+	h1 = document.getElementById("text-content").offsetHeight;
+	h2 = document.getElementById("text-text").offsetHeight;
+	if(h1 > h2)
+		document.getElementById("button-down-text").style.visibility = "visible";
 })();
 
 var h;
 var w;
 
-//监听窗口改变
+//---------------关于窗口自适应---------------------------------
 window.onresize = function(){
 	h = window.innerHeight;
 	w = window.innerWidth;
 	bgChange();
 	titleChange();
 	listChange();
+	califbutton("article-list","left-list",artlistdown);
+	califbutton("date-list","right-list",sortlistdown);
+	califbutton("text-content","text-text",textlistdown);
 }
-
 function bgChange(){
 	var bg = document.getElementsByClassName("page-bg");
 
@@ -40,7 +55,6 @@ function bgChange(){
         }
     }
 }
-
 function titleChange(){
 	var ttl = document.getElementsByClassName("title");
 	var navimg = document.getElementById("navimg").style;
@@ -62,7 +76,6 @@ function titleChange(){
 		navimg.top = "15px";
 	}
 }
-
 var status=1;
 //status=0 welcome
 //status=1 list
@@ -76,48 +89,88 @@ function listChange(){
 	}
 }
 
+//---------------------关于菜单按钮------------------------
 var navbtn = document.getElementById("navimg");
 var navflag = 0;
 //是否点击nav按钮，点击为1
 var changeon = 0;
 navbtn.onclick = function(){
-	if(1){
-		changeon = 1;
-		nowtime = 0;
-		var header = document.getElementsByClassName("head");
-		var navwrap = document.getElementsByClassName("wrapper-bar");
-		if(navflag){
-			navflag = 0;
-			header[0].style.top = 0;
-			navwrap[0].style.top = "-434px";
-		}
-		else{
-			navflag = 1;
-			header[0].style.top = "-70px";
-			navwrap[0].style.top = 0;
-		}
+	var header = document.getElementsByClassName("head");
+	var navwrap = document.getElementsByClassName("wrapper-bar");
+	if(navflag){
+		navflag = 0;
+		header[0].style.top = 0;
+		navwrap[0].style.top = "-434px";
+	}
+	else{
+		navflag = 1;
+		header[0].style.top = "-70px";
+		navwrap[0].style.top = 0;
 	}
 }
 
-var nav_timer;
-var nowtime;
-function navOut(){
-	nowtime = nowtime + 1;
-	header[0].style.top = -70/10*nowtime + 'px';
-	navwrap[0].style.right = - 240 + 240/10*nowtime + 'px';
-	if(nowtime == 10){
-		clearInterval(nav_timer);
-		changeon = 0;
-	}
+//------------------------关于翻页按钮--------------------
+var artlistup = document.getElementById("button-up-list");
+var artlistdown = document.getElementById("button-down-list");
+var sortlistup = document.getElementById("button-up-sort");
+var sortlistdown = document.getElementById("button-down-sort");
+var textlistup = document.getElementById("button-up-text");
+var textlistdown = document.getElementById("button-down-text");
+artlistup.onclick = function(){
+	var page = document.getElementById("article-list").style;
+	var top = page.top.replace("%","")/1;
+	page.top = top + 50 + '%';
+	if(top == -50)
+		artlistup.style.visibility = "hidden";
+	califbutton("article-list","left-list",artlistdown);
 }
-function navIn(){
-	var header = document.getElementsByClassName("head");
-	var navwrap = document.getElementsByClassName("wrapper-bar");
-	nowtime = nowtime + 1;
-	header[0].style.top = - 70 + 70/10*nowtime + 'px';
-	navwrap[0].style.right = -240/10*nowtime + 'px';
-	if(nowtime == 10){
-		clearInterval(nav_timer);
-		changeon = 0;
-	}
+artlistdown.onclick = function(){
+	var page = document.getElementById("article-list");
+	artlistup.style.visibility = "visible";
+	var top = page.style.top.replace("%","")/1;
+	page.style.top = top - 50 + '%';
+	califbutton("article-list","left-list",artlistdown);
 }
+sortlistup.onclick = function(){
+	var page = document.getElementById("date-list").style;
+	var top = page.top.replace("%","")/1;
+	page.top = top + 50 + '%';
+	if(top == -50)
+		sortlistup.style.visibility = "hidden";
+	califbutton("date-list","right-list",sortlistdown);
+}
+sortlistdown.onclick = function(){
+	var page = document.getElementById("date-list");
+	sortlistup.style.visibility = "visible";
+	var top = page.style.top.replace("%","")/1;
+	page.style.top = top - 50 + '%';
+	califbutton("date-list","right-list",sortlistdown);
+}
+textlistup.onclick = function(){
+	var page = document.getElementById("text-content").style;
+	var top = page.top.replace("%","")/1;
+	page.top = top + 50 + '%';
+	if(top == -50)
+		textlistup.style.visibility = "hidden";
+	califbutton("text-content","text-text",textlistdown);
+}
+textlistdown.onclick = function(){
+	var page = document.getElementById("text-content");
+	textlistup.style.visibility = "visible";
+	var top = page.style.top.replace("%","")/1;
+	page.style.top = top - 50 + '%';
+	califbutton("text-content","text-text",textlistdown);
+}
+function califbutton(page,page2,btn){
+	var page = document.getElementById(page);
+	var page2 = document.getElementById(page2);
+	var top = page.style.top.replace("%","")/1;
+	var hei1 = page.offsetHeight;
+	var hei2 = page2.offsetHeight;
+	if(((-top)/100+1)*hei2 > hei1)
+		btn.style.visibility = "hidden";
+	else
+		btn.style.visibility = "visible";
+}
+
+//---------------------关于打开一篇文章-------------------------
