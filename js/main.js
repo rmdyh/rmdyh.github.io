@@ -81,16 +81,20 @@ var navflag = 0;
 //是否点击nav按钮，点击为1
 var changeon = 0;
 navbtn.onclick = function(){
-	if(!changeon){
+	if(1){
 		changeon = 1;
 		nowtime = 0;
+		var header = document.getElementsByClassName("head");
+		var navwrap = document.getElementsByClassName("wrapper-bar");
 		if(navflag){
 			navflag = 0;
-			nav_timer = setInterval(navIn,20);
+			header[0].style.top = 0;
+			navwrap[0].style.top = "-434px";
 		}
 		else{
 			navflag = 1;
-			nav_timer = setInterval(navOut,20);
+			header[0].style.top = "-70px";
+			navwrap[0].style.top = 0;
 		}
 	}
 }
@@ -98,12 +102,10 @@ navbtn.onclick = function(){
 var nav_timer;
 var nowtime;
 function navOut(){
-	var header = document.getElementsByClassName("head");
-	var navwrap = document.getElementsByClassName("wrapper-bar");
 	nowtime = nowtime + 1;
-	header[0].style.top = -70/20*nowtime + 'px';
-	navwrap[0].style.top = - 434 + 434/20*nowtime + 'px';
-	if(nowtime == 20){
+	header[0].style.top = -70/10*nowtime + 'px';
+	navwrap[0].style.right = - 240 + 240/10*nowtime + 'px';
+	if(nowtime == 10){
 		clearInterval(nav_timer);
 		changeon = 0;
 	}
@@ -112,9 +114,9 @@ function navIn(){
 	var header = document.getElementsByClassName("head");
 	var navwrap = document.getElementsByClassName("wrapper-bar");
 	nowtime = nowtime + 1;
-	header[0].style.top = - 70 + 70/20*nowtime + 'px';
-	navwrap[0].style.top = -434/20*nowtime + 'px';
-	if(nowtime == 20){
+	header[0].style.top = - 70 + 70/10*nowtime + 'px';
+	navwrap[0].style.right = -240/10*nowtime + 'px';
+	if(nowtime == 10){
 		clearInterval(nav_timer);
 		changeon = 0;
 	}
