@@ -10,6 +10,17 @@
 	src: url('../fonts/Blackie.ttf'); /* IE9+ */
 }
 
+/*隐藏list*/
+#content-list{
+	position: absolute;
+	visibility: hidden;
+}
+/*隐藏article*/
+#content-article{
+	position: absolute;
+	visibility: hidden;
+}
+
 *{
     margin:0;
     padding:0;
@@ -22,6 +33,10 @@ body{
     overflow: hidden;
 }
 
+li{
+	margin: 12px 0;
+}
+
 .head{
 	position: fixed;
 	top: 0;
@@ -32,15 +47,16 @@ body{
 	background: rgba(243,247,250,0.9);
 }
 
-#title{
+.title{
 	font-family: 'enfont';
 	color: #3a3a3a;
 	text-align: center;
 }
 
-.head img{
-	position: fixed;
+#navimg{
+	position: absolute;
 	right: 15px;
+	z-index: 2;
 }
 
 .page-bg{
@@ -48,7 +64,7 @@ body{
 	z-index: -1;
 }
 
-#content-list{
+.page{
 	width: 100%;
 	margin-top: 70px;
 	font-family: "zhfont";
@@ -117,18 +133,15 @@ body{
 }
 
 .list-list{
-	height: 90%;
+	height: 85%;
 	font-size: 24px;
-	margin: 7% 50px 0 10%;
+	margin: 7% 60px 0 10%;
+	overflow: hidden;
 }
 #right-list{
 	margin-top: 15%;
 	margin-left: 0;
 	text-align: center;
-}
-
-.list-title li{
-	margin: 12px 0;
 }
 
 .funcbt{
@@ -155,4 +168,71 @@ body{
 }
 .down-button img{
 	top: 30%;
+}
+
+#artile-wrapper{
+	width: 80%;
+	margin-left: 10%; 
+}
+
+#text-article{
+	margin-top: 1%;
+	position: relative;
+	display: inline-block;
+}
+
+.text-text{
+	height: 90%;
+	font-size: 20px;
+	margin: 4% 60px 0 4%;
+	overflow: hidden;
+}
+
+.wrapper-bar{
+	width: 240px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.tool-bar{
+	background: rgba(243,247,250,0.9);
+	width: 100%;
+	margin-bottom: 4px;
+	display: inline-block;
+	font-family: zhfont;
+	font-size: 24px;
+}
+
+.tool-bar li{
+	padding: 0 24px;
+}
+
+.bar1{
+	height: 70px;
+}
+#bar-title{
+	justify-content: flex-start;
+	padding-left: 10px;
+}
+
+.bar2 ul{
+	text-align: right;
+	margin: 16px 0;
+}
+.bar2 li{
+	display: inline-block;
+	border-bottom: 2px solid #a3a3a3;
+}
+
+.bar3{
+	text-align: center;
+	padding-top: 10px;
+}
+
+.bar4{
+	font-size: 13px;
+	text-align: center;
+	color: #a3a3a3;
+	padding: 4px 0;
 }

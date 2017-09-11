@@ -4,6 +4,8 @@
 	bgChange();
 	titleChange();
 	listChange();
+	var navwrap = document.getElementsByClassName("wrapper-bar");
+	navwrap[0].style.top = "-434px";
 })();
 
 var h;
@@ -40,19 +42,21 @@ function bgChange(){
 }
 
 function titleChange(){
-	var ttl = document.getElementById("title").style;
+	var ttl = document.getElementsByClassName("title");
 	var navimg = document.getElementById("navimg").style;
 
 	if(w < 480){
-		ttl.fontSize = w/20 + 'px';
-		ttl.marginTop = 34 - (w / 20) +'px';
+		ttl[0].style.fontSize = w/20 + 'px';
+		ttl[0].style.marginTop = 34 - (w / 20) +'px';
+		ttl[1].style.fontSize = w/32 + 'px';
 		navimg.width = w/12 + 'px';
 		navimg.height = w/12 + 'px';
 		navimg.top = 35 - w/24 + 'px'; 
 	}
 	else{
-		ttl.fontSize = "24px";
-		ttl.marginTop = "10px";
+		ttl[0].style.fontSize = "24px";
+		ttl[0].style.marginTop = "10px";
+		ttl[1].style.fontSize = "15px";
 		navimg.width = "40px";
 		navimg.height = "40px";
 		navimg.top = "15px";
@@ -65,7 +69,53 @@ var status=1;
 //status=2 article
 function listChange(){
 //	if(status !=1) return;
-	var conlist = document.getElementById("content-list").style;
+	var conlist = document.getElementsByClassName("page");
 
-	conlist.height = h - 70 + 'px';
+	for(var i = 0;i < conlist.length;i++){
+		conlist[i].style.height = h - 70 + 'px';
+	}
+}
+
+var navbtn = document.getElementById("navimg");
+var navflag = 0;
+//是否点击nav按钮，点击为1
+var changeon = 0;
+navbtn.onclick = function(){
+	if(!changeon){
+		changeon = 1;
+		nowtime = 0;
+		if(navflag){
+			navflag = 0;
+			nav_timer = setInterval(navIn,20);
+		}
+		else{
+			navflag = 1;
+			nav_timer = setInterval(navOut,20);
+		}
+	}
+}
+
+var nav_timer;
+var nowtime;
+function navOut(){
+	var header = document.getElementsByClassName("head");
+	var navwrap = document.getElementsByClassName("wrapper-bar");
+	nowtime = nowtime + 1;
+	header[0].style.top = -70/20*nowtime + 'px';
+	navwrap[0].style.top = - 434 + 434/20*nowtime + 'px';
+	if(nowtime == 20){
+		clearInterval(nav_timer);
+		changeon = 0;
+	}
+}
+function navIn(){
+	var header = document.getElementsByClassName("head");
+	var navwrap = document.getElementsByClassName("wrapper-bar");
+	nowtime = nowtime + 1;
+	header[0].style.top = - 70 + 70/20*nowtime + 'px';
+	navwrap[0].style.top = -434/20*nowtime + 'px';
+	if(nowtime == 20){
+		clearInterval(nav_timer);
+		changeon = 0;
+	}
 }
