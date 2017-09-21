@@ -2,7 +2,7 @@
 layout: post
 title: 'A Foolish Self Introduction'
 date:   2017-08-02 21:10:39 +0800
-categories: emmmm
+tags: [introduction]
 ---
 
 首先，请允许我做个自我介绍。

@@ -7,10 +7,6 @@
 	var h2 = document.getElementById("left-list").offsetHeight;
 	if(h1 > h2)
 		document.getElementById("button-down-list").style.visibility = "visible";
-	h1 = document.getElementById("date-list").offsetHeight;
-	h2 = document.getElementById("right-list").offsetHeight;
-	if(h1 > h2)
-		document.getElementById("button-down-sort").style.visibility = "visible";
 })();
 
 var h;
@@ -43,8 +39,6 @@ function listChange(){
 //------------------------关于翻页按钮--------------------
 var artlistup = document.getElementById("button-up-list");
 var artlistdown = document.getElementById("button-down-list");
-var sortlistup = document.getElementById("button-up-sort");
-var sortlistdown = document.getElementById("button-down-sort");
 artlistup.onclick = function(){
 	var page = document.getElementById("article-list").style;
 	var top = page.top.replace("%","")/1;
@@ -60,21 +54,6 @@ artlistdown.onclick = function(){
 	page.style.top = top - 50 + '%';
 	califbutton("article-list","left-list",artlistdown);
 }
-sortlistup.onclick = function(){
-	var page = document.getElementById("date-list").style;
-	var top = page.top.replace("%","")/1;
-	page.top = top + 50 + '%';
-	if(top == -50)
-		sortlistup.style.visibility = "hidden";
-	califbutton("date-list","right-list",sortlistdown);
-}
-sortlistdown.onclick = function(){
-	var page = document.getElementById("date-list");
-	sortlistup.style.visibility = "visible";
-	var top = page.style.top.replace("%","")/1;
-	page.style.top = top - 50 + '%';
-	califbutton("date-list","right-list",sortlistdown);
-}
 function califbutton(page,page2,btn){
 	var page = document.getElementById(page);
 	var page2 = document.getElementById(page2);
@@ -85,26 +64,4 @@ function califbutton(page,page2,btn){
 		btn.style.visibility = "hidden";
 	else
 		btn.style.visibility = "visible";
-}
-
-//---------------关于筛选指定日期文档------------------
-function listname(value){
-	var title = document.getElementsByClassName('titlename');
-	for(var i=0;i<title.length;i++){
-		title[i].style.display='none';
-	}
-	title = document.getElementsByClassName(value);
-	for(var i=0;i<title.length;i++){
-		title[i].style.display='block';
-	}
-	if(value=='titlename'){
-		document.getElementById('specialdatelist').style.display='none';
-	}
-	else{
-		document.getElementById('specialdatelist').style.display='block';
-	}
-	//检验下按钮是否还存在
-	califbutton("article-list","left-list",artlistdown);
-	califbutton("date-list","right-list",sortlistdown);
-
 }
