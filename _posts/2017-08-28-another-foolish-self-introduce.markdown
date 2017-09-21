@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Another Foolish Self Introduction'
 date:   2017-08-28 21:10:39 +0800
 categories: emmmm
