@@ -14,7 +14,7 @@ permalink: /dates/
 				<div class="list-list" id="left-list">
 					<ul class="list-title" id="article-list">
 					{% for post in site.posts %}
-					<li class="{{ post.date | date: '%Y%b' }} titlename">
+					<li class="postclass{{ post.date | date: '%Y%b' }} titlename">
 					<a href="{{ site.data.global.url }}{{ post.url }}">-{{ post.title }}<br>
 					<small><small class="post-date">&nbsp;&nbsp;&nbsp;{{ post.date | date: '%Y, %b %d' }}</small></small>
 					</a></li>
@@ -37,7 +37,7 @@ permalink: /dates/
 						{% assign tempdate=  post.date | date: '%Y%b' %}
 						    {% unless savedate == tempdate %}
 						        {% assign savedate = tempdate %}
-							<li onclick="listname('{{ savedate }}');" >{{ post.date | date: '%Y-%b' }}</li>
+							<li onclick="listname('postclass{{ savedate }}');" >{{ post.date | date: '%Y-%b' }}</li>
 						{% endunless %}
 						{% endfor %}
 						</ul>
