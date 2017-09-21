@@ -86,3 +86,25 @@ function califbutton(page,page2,btn){
 	else
 		btn.style.visibility = "visible";
 }
+
+//---------------关于筛选指定日期文档------------------
+function listname(value){
+	var title = document.getElementsByClassName('titlename');
+	for(var i=0;i<title.length;i++){
+		title[i].style.display='none';
+	}
+	title = document.getElementsByClassName(value);
+	for(var i=0;i<title.length;i++){
+		title[i].style.display='block';
+	}
+	if(value=='titlename'){
+		document.getElementById('specialdatelist').style.display='none';
+	}
+	else{
+		document.getElementById('specialdatelist').style.display='block';
+	}
+	//检验下按钮是否还存在
+	califbutton("article-list","left-list",artlistdown);
+	califbutton("date-list","right-list",sortlistdown);
+
+}

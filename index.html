@@ -13,7 +13,10 @@ layout: default
 				<div class="list-list" id="left-list">
 					<ul class="list-title" id="article-list">
 					{% for post in site.posts %}
-					<li><a href="{{ site.data.global.url }}/{{ post.url }}">-{{ post.title }}</a></li>
+					<li class="{{ post.date | date: '%Y%b' }} titlename">
+					<a href="{{ site.data.global.url }}/{{ post.url }}">-{{ post.title }}<br>
+					<small><small class="post-date">&nbsp;&nbsp;&nbsp;{{ post.date | date: '%Y, %b %d' }}</small></small>
+					</a></li>
 					{% endfor %}
 					</ul>
 				</div>
@@ -27,8 +30,15 @@ layout: default
 				<div class="below-wraper" id="right-wraper">
 					<div class="list-list" id="right-list">
 						<ul class="list-title" id="date-list">
-							<li>2017-09</li>
-							<li>2017-10</li>
+						<li onclick="listname('titlename' );" id='specialdatelist' style='display: none;'>显示全部</li>
+						{% assign savedate='' %}
+						{% for post in site.posts %}
+						{% assign tempdate=  post.date | date: '%Y%b' %}
+						    {% unless savedate == tempdate %}
+						        {% assign savedate = tempdate %}
+							<li onclick="listname('{{ savedate }}');" >{{ post.date | date: '%Y-%b' }}</li>
+						{% endunless %}
+						{% endfor %}
 						</ul>
 					</div>
 					<div class="funcbt up-button" id="div-button-up-sort">
