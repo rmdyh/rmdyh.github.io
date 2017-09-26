@@ -24,8 +24,8 @@ whitelist: []
 plugins:      []
 
 # Conversion
-markdown:    kramdown
-highlighter: pygments
+markdown:    redcarpet
+hightlighter: pygments
 lsi:         false
 excerpt_separator: "\n\n"
 
