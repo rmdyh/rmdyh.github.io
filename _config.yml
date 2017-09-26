@@ -25,9 +25,8 @@ plugins:      []
 
 # Conversion
 markdown:    redcarpet
+paginate: 3
 hightlighter: pygments
-lsi:         false
-excerpt_separator: "\n\n"
 
 # Serving
 detach:  false
@@ -48,15 +47,7 @@ rdiscount:
   extensions: []
 
 redcarpet:
-  extensions: []
-
-kramdown:
-  auto_ids:       true
-  footnote_nr:    1
-  entity_output:  as_char
-  toc_levels:     1..6
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+  extensions: ["hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
 
 #About Posts
 permalink: ':title/'
