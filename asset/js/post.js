@@ -1,3 +1,5 @@
+---
+---
 (function(){
 	h = window.innerHeight;
 	w = window.innerWidth;
@@ -7,6 +9,7 @@
 	var h2 = document.getElementById("text-text").offsetHeight;
 	if(h1 > h2)
 		document.getElementById("button-down-text").style.visibility = "visible";
+	addCopyBoard();
 })();
 
 var h;
@@ -62,4 +65,24 @@ function califbutton(page,page2,btn){
 		btn.style.visibility = "hidden";
 	else
 		btn.style.visibility = "visible";
+}
+
+function addCopyBoard(){
+	var codeblocks = document.getElementsByClassName("highlight");
+	for(var i = 0;i < codeblocks.length;i++){
+		var imgs=document.createElement("img");
+		imgs.src="{{ site.data.global.url }}/asset/images/copyico.png";
+		imgs.title="复制代码";
+		imgs.alt="复制代码";
+		imgs.copy_obj_target=codeblocks[i];
+		var clip = new ZeroClipboard( imgs );
+		clip.on("copy", function(e) {
+			e.clipboardData.setData("text/plain", e.target.copy_obj_target.innerText);
+		});
+		imgs.onclick = function(){
+			alert("代码已经拷贝到剪贴板了！");
+		};
+		imgs.style="position:absolute; top:12px; right:5px; width:15px; height:17px;";
+		codeblocks[i].appendChild(imgs);
+	}
 }

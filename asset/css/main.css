@@ -348,3 +348,7 @@ a{
 	height: 100%;
 	margin-left: 20%;
 }
+
+.highlight{
+	position: relative;
+}
