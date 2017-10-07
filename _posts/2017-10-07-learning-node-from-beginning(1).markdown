@@ -5,14 +5,16 @@ date:   2017-10-07 14:47:39 +0800
 tags: [Node Beginner]
 ---
 ## Node.js应用的组成部分
-Node.js应用的组成部分分为以下三个：
+
+
+### Node.js应用的组成部分分为以下三个：
 * **引入 required 模块：** 我们可以使用 require 指令来载入 Node.js 模块。  
 
 * **创建服务器：** 服务器可以监听客户端的请求，类似于 Apache 、Nginx 等 HTTP 服务器。
 
 * **接收请求与响应请求：** 服务器很容易创建，客户端可以使用浏览器或终端发送 HTTP 请求，服务器接收请求后返回响应数据。
 
-使用实例：  
+### 使用实例：  
 {% highlight javascript %}
 var http = require('http');
 
