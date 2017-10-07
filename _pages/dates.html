@@ -2,7 +2,6 @@
 layout: default
 permalink: /dates/
 ---
-
 <div class="page" id="content-list">
 	<div class="wrapper">
 		<div id="left-con">
@@ -14,10 +13,7 @@ permalink: /dates/
 				<div class="list-list" id="left-list">
 					<ul class="list-title" id="article-list">
 					{% for post in site.posts %}
-					<li class="postclass{{ post.date | date: '%Y%b' }} titlename">
-					<a href="{{ site.data.global.url }}{{ post.url }}">-{{ post.title }}<br>
-					<small><small class="post-date">&nbsp;&nbsp;&nbsp;{{ post.date | date: '%Y, %b %d' }}</small></small>
-					</a></li>
+					<li class="postclass{{ post.date | date: '%Y%b' }} titlename" onclick=jmp("{{ site.data.global.url }}{{ post.url }}");>-{{ post.title }}<br><small><small class="post-date">&nbsp;&nbsp;&nbsp;{{ post.date | date: '%Y, %b %d' }}</small></small></li>
 					{% endfor %}
 					</ul>
 				</div>

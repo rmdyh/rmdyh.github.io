@@ -2,7 +2,6 @@
 layout: default
 permalink: /tags/
 ---
-
 <div class="page" id="content-list">
 	<div class="wrapper">
 		<div id="left-con">
@@ -14,12 +13,10 @@ permalink: /tags/
 				<div class="list-list" id="left-list">
 					<ul class="list-title" id="article-list">
 					{% for post in site.posts %}
-					<li class="{% for tag in post.tags %}postclass{{ tag }} {% endfor %}titlename">
-					<a href="{{ site.data.global.url }}{{ post.url }}">-{{ post.title }}<br>
+					<li class="{% for tag in post.tags %}postclass{{ tag }} {% endfor %}titlename" onclick=jmp("{{ site.data.global.url }}{{ post.url }}");>-{{ post.title }}<br>
 					<small><small class="post-date">&nbsp;
 					{% for tag in post.tags %}<span>&#35;{{ tag }}</span>{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}{% endfor %}
-					</small></small>
-					</a></li>
+					</small></small></li>
 					{% endfor %}
 					</ul>
 				</div>

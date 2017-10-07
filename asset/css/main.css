@@ -195,6 +195,7 @@ ul{
 .list-list li{
 	margin: 2px 0;
 	padding: 6px 0;
+	cursor: pointer;
 }
 
 .list-title{
@@ -311,6 +312,7 @@ ul{
 	list-style-type: none;
 	margin: 2px 0;
 	padding: 6px 0;
+	cursor: pointer;
 }
 
 .tool-bar{
