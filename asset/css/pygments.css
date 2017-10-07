@@ -12,8 +12,26 @@ blue      #268bd2  reserved keywords
 cyan      #2aa198  strings, numbers
 green     #859900  operators, other keywords
 */
-
-.highlight { background-color: #fdf6e3; color: #586e75 }
+.highlighter-rouge{
+  background-color: rgba(240,250,255,0.8);
+	font: 14px/20px Menlo,Monaco,Consolas,"Andale Mono","lucida console","Courier New",monospace;
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+  border: 2px solid white;
+  padding: 0 5px;
+}
+.highlight {
+  background: #fbfbfb url('../images/codecolorer_bg.gif') top;
+	margin: 15px auto;
+	font: 12px/20px Menlo,Monaco,Consolas,"Andale Mono","lucida console","Courier New",monospace;
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+	border: 1px solid #ddd;
+	border-left-width: 4px;
+	padding: 10px 15px;
+}
 .highlight .c { color: #93a1a1 } /* Comment */
 .highlight .err { color: #586e75 } /* Error */
 .highlight .g { color: #586e75 } /* Generic */

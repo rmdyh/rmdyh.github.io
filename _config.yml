@@ -25,8 +25,9 @@ plugins:      []
 
 # Conversion
 markdown:    kramdown
-paginate: 3
-highlighter: rough
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
 
 # Serving
 detach:  false
@@ -46,9 +47,13 @@ defaults: []
 rdiscount:
   extensions: []
 
-redcarpet:
-  extensions: ["hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
-
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 #About Posts
 permalink: ':title/'
 
