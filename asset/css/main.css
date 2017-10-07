@@ -21,26 +21,28 @@
 	visibility: hidden;
 }*/
 
-*{
-    margin:0;
-    padding:0;
-    list-style-type:none;
-    cursor: default;
-}
-
 body{
     background-color: #ffffff;
     width: 100%;
     overflow: hidden;
-}
-
-li{
-	margin: 2px 0;
-	padding: 6px 0;
+    margin: 0;
+    padding: 0;
 }
 
 a{
 	text-decoration: none;
+}
+
+div{
+	margin: 0;
+	padding: 0;
+}
+
+ol{
+	list-style-type: decimal;
+}
+ul{
+	list-style-type:circle;
 }
 
 .head{
@@ -56,6 +58,10 @@ a{
     -o-transition: top 0.3s;
     -ms-transition: top 0.3s;   
     transition: top 0.3s;
+}
+.head h1{
+	margin: 0;
+	padding: 0;
 }
 
 .title{
@@ -146,7 +152,9 @@ a{
 }
 .title-article h2{
 	text-align: center;
-	font-size: 32px;
+	font-size: 26px;
+	margin: 0;
+	padding: 0;
 }
 
 .content-block{
@@ -179,6 +187,16 @@ a{
 	border-width: 3px;
 	border-color: white;
 }
+.list-list ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.list-list li{
+	margin: 2px 0;
+	padding: 6px 0;
+}
+
 .list-title{
 	position: absolute;
 	width: 100%;
@@ -254,9 +272,13 @@ a{
 .text-text{
 	height: 90%;
 	font-size: 16px;
-	margin: 20px 60px 0 4%;
+	margin: 20px 60px 0 5%;
 	overflow: hidden;
 	position: relative;
+	font-family: "楷体","仿宋";
+}
+.text-text h1,.text-text h2,.text-text h3{
+	font-family: zhfont;
 }
 #text-content{
 	position: absolute;
@@ -280,6 +302,15 @@ a{
     -ms-transition: top 0.3s;   
     transition: top 0.3s;
     z-index: 1;
+}
+.wrapper-bar ul,.wrapper-bar h1,.wrapper-bar h3{
+	margin: 0;
+	padding: 0;
+}
+.wrapper-bar li{
+	list-style-type: none;
+	margin: 2px 0;
+	padding: 6px 0;
 }
 
 .tool-bar{
