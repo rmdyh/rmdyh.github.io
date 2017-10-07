@@ -24,9 +24,9 @@ whitelist: []
 plugins:      []
 
 # Conversion
-markdown:    redcarpet
+markdown:    kramdown
 paginate: 3
-hightlighter: pygments
+highlighter: pygments
 
 # Serving
 detach:  false
