@@ -172,7 +172,7 @@ a{
 .list-list{
 	height: 85%;
 	font-size: 24px;
-	margin: 7% 60px 0 40px;
+	margin: 20px 60px 0 40px;
 	overflow: hidden;
 	position: relative;
 	border-right-style: solid;
@@ -253,8 +253,8 @@ a{
 
 .text-text{
 	height: 90%;
-	font-size: 20px;
-	margin: 4% 60px 0 4%;
+	font-size: 16px;
+	margin: 20px 60px 0 4%;
 	overflow: hidden;
 	position: relative;
 }

@@ -4,7 +4,7 @@ title:  "Begin Node Learning!(1)"
 date:   2017-10-07 14:47:39 +0800
 tags: [Node Beginner]
 ---
-### Node.js应用的组成部分
+## Node.js应用的组成部分
 Node.js应用的组成部分分为以下三个：
 * **引入 required 模块：** 我们可以使用 require 指令来载入 Node.js 模块。  
 
